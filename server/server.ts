@@ -4,12 +4,11 @@ import fastify from "fastify";
 import cors from "@fastify/cors";
 
 import { createContext } from "./context";
-import { appRouter, type AppRouter } from "./routes";
+import { appRouter, type AppRouter } from "./router";
 
 const server = fastify();
 
 server.register(cors, {
-  // origin: "https://brtpal.pages.dev",
   origin: "http://localhost:5173",
   credentials: true,
 });
