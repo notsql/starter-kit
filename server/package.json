@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch -r @swc-node/register ./backend/server.ts",
+    "dev": "node --watch -r @swc-node/register ./server.ts",
+    "dev-env": "node --env-file=.env --watch -r @swc-node/register ./server.ts",
     "build": "swc backend -d dist --config-file .swcrc & tsc --pretty --skipLibCheck --noEmit",
-    "preview": "node ./dist/backend/server.js",
+    "preview": "node ./dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

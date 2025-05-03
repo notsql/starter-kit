@@ -2,14 +2,9 @@ import type { CreateFastifyContextOptions } from '@trpc/server/adapters/fastify'
 
 import type { AuthClient } from './models';
 
-import { verifyIdToken } from "./service/auth";
+import { verifyIdToken } from "./modules/auth/auth.service";
 
-export async function createContext({ req, res }: CreateFastifyContextOptions):
-Promise<{
-  req: CreateFastifyContextOptions['req'],
-  res: CreateFastifyContextOptions['res'],
-  client: AuthClient | undefined }>
-{
+export async function createContext({ req, res }: CreateFastifyContextOptions) {
   let client: AuthClient | undefined;
   const token = req.headers.authorization?.split("Bearer ")[1];
 

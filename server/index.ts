@@ -7,4 +7,4 @@ export const router = t.router;
 
 export const publicProcedure = t.procedure;
 
-export type { AppRouter } from "./routes";
+export type { AppRouter } from "./router";

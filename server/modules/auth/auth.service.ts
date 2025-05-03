@@ -1,7 +1,7 @@
 import { AuthClientErrorCode, type FirebaseAuthError } from "firebase-admin/auth";
 import { ResultAsync } from "neverthrow";
 
-import { getFirebase } from "../loaders/firebase";
+import { getFirebase } from "../../loaders/firebase";
 
 const { auth } = getFirebase();
 

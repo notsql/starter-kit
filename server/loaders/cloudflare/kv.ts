@@ -20,7 +20,7 @@ export const kv = {
       if (res.error.message.includes("key not found")) {
         return null;
       }
-      throw new Error("[KV]", res.error);
+      throw new Error(`[KV] ${res.error}`);
     }
 
     return JSON.parse(res.value.value) as T;
@@ -43,7 +43,7 @@ export const kv = {
 
     if (res.isErr()) {
       console.error("[KV] Error from Cloudflare");
-      throw new Error("[KV]", res.error);
+      throw new Error(`[KV] ${res.error}`);
     }
   },
 
@@ -60,7 +60,7 @@ export const kv = {
 
     if (res.isErr()) {
       console.error("[KV] Error from Cloudflare");
-      throw new Error("[KV]", res.error);
+      throw new Error(`[KV] ${res.error}`);
     }
   }
 };

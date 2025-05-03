@@ -1,4 +1,4 @@
-import { db, type Models } from "../../db";
+import { db, type Models } from "../../../db";
 
 import { ResultAsync } from "neverthrow";
 

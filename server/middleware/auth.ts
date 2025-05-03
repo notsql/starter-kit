@@ -1,7 +1,7 @@
 import { TRPCError } from "@trpc/server";
 
 import { publicProcedure } from "../index";
-import { getUserById } from "../service/user";
+import { getUserById } from "../modules/user/user.service";
 
 export const authProcedure = publicProcedure.use(async ({ ctx, next }) => {
   if (!ctx.client) {
@@ -36,12 +36,4 @@ export const userProcedure = authProcedure.use(async ({ ctx, next }) => {
       }
     }
   });
-});
-
-export const adminProcedure = userProcedure.use(async ({ ctx, next }) => {
-  if (!ctx.client.isAdmin) {
-    throw new TRPCError({ code: "PRECONDITION_FAILED", message: "User requires elevated rights" });
-  }
-
-  return next();
 });
