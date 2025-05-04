@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch -r @swc-node/register ./server.ts",
-    "dev-env": "node --env-file=.env --watch -r @swc-node/register ./server.ts",
-    "build": "swc backend -d dist --config-file .swcrc & tsc --pretty --skipLibCheck --noEmit",
+    "dev": "node --watch -r @swc-node/register ./src/server.ts",
+    "dev-env": "node --env-file=.env --watch -r @swc-node/register ./src/server.ts",
+    "build": "pnpm --filter db run build-server & swc src -d dist --config-file swcrc.json --strip-leading-paths & tsc -p tsconfig.json --pretty --skipLibCheck --noEmit",
     "preview": "node ./dist/server.js",
+    "preview-env": "node --env-file=.env ./dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -20,11 +21,14 @@
     "@trpc/client": "^11.1.2",
     "@trpc/server": "^11.1.2",
     "cloudflare": "^4.2.0",
+    "destr": "^2.0.5",
+    "drizzle-orm": "^0.43.1",
     "fastify": "^5.3.2",
     "firebase-admin": "^13.3.0",
     "neverthrow": "^8.2.0"
   },
   "devDependencies": {
+    "@swc-node/core": "^1.13.3",
     "@swc-node/register": "^1.10.10",
     "@swc/cli": "^0.7.3",
     "@swc/core": "^1.11.24",

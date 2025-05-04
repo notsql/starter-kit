@@ -4,21 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "push": "prisma db push",
-    "generate": "prisma generate"
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate",
+    "push": "drizzle-kit push",
+    "build": "swc src -d dist --config-file swcrc.json --strip-leading-paths & tsc --pretty --skipLibCheck --noEmit",
+    "build-server": "swc src -d ../server/dist/db --config-file swcrc.json --strip-leading-paths & tsc --pretty --skipLibCheck --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
+  "dependencies": {
+    "cloudflare": "^4.2.0",
+    "destr": "^2.0.5",
+    "drizzle-orm": "^0.43.1"
+  },
   "devDependencies": {
+    "@swc/cli": "^0.7.3",
+    "@swc/core": "^1.11.24",
     "@types/node": "^22.15.3",
-    "prisma": "^6.7.0",
+    "drizzle-kit": "^0.31.1",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
-  },
-  "dependencies": {
-    "@prisma/adapter-d1": "^6.7.0",
-    "@prisma/client": "^6.7.0"
   }
 }

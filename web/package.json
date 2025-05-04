@@ -28,6 +28,7 @@
 		]
 	},
 	"dependencies": {
-		"@trpc/client": "^11.1.2"
+		"@trpc/client": "^11.1.2",
+		"firebase": "^11.6.1"
 	}
 }

@@ -5,7 +5,7 @@ import { getIdToken } from "firebase/auth";
 
 import { auth } from "./firebase";
 
-import type { AppRouter } from "../../../server";
+import type { AppRouter } from "../../../server/src";
 
 export const api = createTRPCClient<AppRouter>({
 	links: [
