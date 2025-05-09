@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "pnpm --parallel run dev",
+    "build": "pnpm --parallel run build",
+    "preview": "pnpm --parallel run preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
