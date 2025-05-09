@@ -1,4 +1,4 @@
 packages:
-  - frontend
-  - backend
+  - web
+  - server
   - db
